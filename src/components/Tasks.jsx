@@ -1,10 +1,17 @@
 import React from "react";
 import Task from "./Task";
 
-const Tasks = ({ tasks, handleChangeStatus }) => {
+const Tasks = ({ tasks, handleChangeStatus, handleDeleteTask }) => {
     return (
         <>
-            {tasks.map(task => <Task task={task} handleChangeStatus={handleChangeStatus} />)}
+            {tasks.map(task => (
+                <Task
+                    key={task.id}
+                    task={task}
+                    handleChangeStatus={handleChangeStatus}
+                    handleDeleteTask={handleDeleteTask}
+                />
+            ))}
         </>
     );
 };
